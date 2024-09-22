@@ -1,0 +1,256 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\title{\vspace{-3.5cm}Homework for Linear Algebra\\September 20,2024}
+\author{Chengyu Zhang}
+\date{}
+\begin{document}
+
+
+
+\maketitle
+\paragraph{Exercise 1.}
+1.(i)$\rightarrow$(ii) Using the definition of f from (i):
+\[
+f(x_1+x_2)=a(x_1+x_2)=ax_1+ax_2=f(x_1)+f(x_2)
+\]
+\[f(cx)=acx=cf(x)\]
+\\2.(ii)$\rightarrow$(i) When $x=0$ , using additivity : \[f(0)=2f(0)=0\]\\
+When $x \neq 0$ , using multiplication : \[f(x)=f(x*1)=x*f(1)\]\\
+So,when a=f(1), we have $f(x)=ax$
+
+\paragraph{Exercise 2}
+(a)line (b)plane  (c)all of $R^3$
+
+
+\paragraph{Exercise 3.} $c=3$ and $d = 9$\\
+(3,3,6) isn't on the plane consisting of $\boldsymbol{v}$ and $\boldsymbol{w}$.
+
+\paragraph{Exercise 4.}Taking a small scale as an example,assume
+\[
+A=\begin{bmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{bmatrix}
+ B=\begin{bmatrix}
+b_{11} & b_{12}\\
+b_{21} & b_{22}\\
+\end{bmatrix}
+ C=\begin{bmatrix}
+c_{11} & c_{12}\\
+c_{21} & c_{22}\\
+\end{bmatrix}
+\]
+(i)\[A+B=
+\begin{bmatrix}
+a_{11}+b_{11} & a_{12}+b_{12}\\
+a_{21}+b_{21} & a_{22}+b_{22}\\
+\end{bmatrix}
+= B+A\] \\
+(ii)\[c(A+B)=
+\begin{bmatrix}
+c(a_{11}+b_{11}) & c (a_{12}+b_{12})\\
+c(a_{21}+b_{21}) & c(a_{22}+b_{22})\\
+\end{bmatrix}\\=
+\begin{bmatrix}
+ca_{11}+cb_{11} & ca_{12}+cb_{12}\\
+ca_{21}+cb_{21} & ca_{22}+cb_{22}\\
+\end{bmatrix}
+=cA+cB\] \\
+(iii)\[
+A+(B+C)=
+\begin{bmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11}+c_{11} & b_{12}+c_{12}\\
+b_{21}+c_{21} & b_{22}+c_{22}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{11}+b_{11}+c_{11} & a_{12}+b_{12}+c_{12}\\
+a_{21}+b_{21}+c_{21} & a_{22}+b_{22}+c_{22}\\
+\end{bmatrix} 
+\]\\
+\[
+(A+B)+C=
+\begin{bmatrix}
+a_{11}+b_{11} & a_{12}+b_{12}\\
+a_{21}+b_{21} & a_{22}+b_{22}\\
+\end{bmatrix}
++
+\begin{bmatrix}
+c_{11} & c_{12}\\
+c_{21} & c_{22}\\
+\end{bmatrix}
+=A+(B+C)
+\]\\
+(iv)
+\[
+A(B+C)=
+\begin{bmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{bmatrix}
+\begin{bmatrix}
+b_{11}+c_{11} & b_{12}+c_{12}\\
+b_{21}+c_{21} & b_{22}+c_{22}\\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+a_{11}(b_{11} + c_{11}) + a_{12}(b_{21} + c_{21}) & a_{11}(b_{12} + c_{12}) + a_{12}(b_{22} + c_{22}) \\
+a_{21}(b_{11} + c_{11}) + a_{22}(b_{21} + c_{21}) & a_{21}(b_{12} + c_{12}) + a_{22}(b_{22} + c_{22}) \\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\
+a_{21}b_{11}+ a_{22}b_{21}& a_{21}b_{12} + a_{22}b_{22} \\
+\end{bmatrix}
++
+\begin{bmatrix}
+a_{11}c_{11} + a_{12}c_{21} & a_{11}c_{12} + a_{12}c_{22} \\
+a_{21}c_{11}+ a_{22}c_{21}& a_{21}c_{12} + a_{22}c_{22} \\
+\end{bmatrix}
+=AB+AC
+\]
+\\(v)
+\[
+(A+B)C =
+\begin{bmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} \\
+a_{21} + b_{21} & a_{22} + b_{22} \\
+\end{bmatrix}
+\begin{bmatrix}
+c_{11} & c_{12} \\
+c_{21} & c_{22} \\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+(a_{11} + b_{11})c_{11} + (a_{12} + b_{12})c_{21} & (a_{11} + b_{11})c_{12} + (a_{12} + b_{12})c_{22} \\
+(a_{21} + b_{21})c_{11} + (a_{22} + b_{22})c_{21} & (a_{21} + b_{21})c_{12} + (a_{22} + b_{22})c_{22} \\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+a_{11}c_{11} + a_{12}c_{21} & a_{11}c_{12} + a_{12}c_{22} \\
+a_{21}c_{11}+ a_{22}c_{21}& a_{21}c_{12} + a_{22}c_{22} \\
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11}c_{11} + b_{12}c_{21} & b_{11}c_{12} + b_{12}c_{22} \\
+b_{21}c_{11}+ b_{22}c_{21}& b_{21}c_{12} + b_{22}c_{22} \\
+\end{bmatrix}
+=AC+BC
+\]
+\\(vi)
+\[
+A(BC) =
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+\end{bmatrix}
+\begin{bmatrix}
+b_{11}c_{11} + b_{12}c_{21} & b_{11}c_{12} + b_{12}c_{22} \\
+b_{21}c_{11} + b_{22}c_{21} & b_{21}c_{12} + b_{22}c_{22} \\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+a_{11}(b_{11}c_{11} + b_{12}c_{21}) + a_{12}(b_{21}c_{11} + b_{22}c_{21}) & a_{11}(b_{11}c_{12} + b_{12}c_{22}) + a_{12}(b_{21}c_{12} + b_{22}c_{22}) \\
+a_{21}(b_{11}c_{11} + b_{12}c_{21}) + a_{22}(b_{21}c_{11} + b_{22}c_{21}) & a_{21}(b_{11}c_{12} + b_{12}c_{22}) + a_{22}(b_{21}c_{12} + b_{22}c_{22}) \\
+\end{bmatrix}
+\]
+\[
+=
+\begin{bmatrix}
+(a_{11}b_{11}+a_{12}b_{21})c_{11} +(a_{11}b_{12}+a_{12}b_{22})c_{21}& (a_{11}b_{11}+a_{12}b_{21})c_{12} +(a_{11}b_{12}+a_{12}b_{22})c_{22} \\
+(a_{21}b_{11}+a_{22}b_{21})c_{11} +(a_{21}b_{12}+a_{22}b_{22})c_{21} & (a_{21}b_{11}+a_{22}b_{21})c_{12} +(a_{21}b_{12}+a_{22}b_{22})c_{22}\\
+\end{bmatrix}
+\]
+$
+= (AB)C  
+$ \\For larger scale,maybe it's better to focus on only one element of the matrix.
+\paragraph{Exercise 5.}
+\[
+A^2=
+\begin{bmatrix}
+    3 & 1\\
+    1 & -3\\
+\end{bmatrix}
+\begin{bmatrix}
+    3 & 1\\
+    1 & -3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    3 & 1\\
+    1 & -3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    10 & 0\\
+    0 & 10\\
+\end{bmatrix}
+\]
+\[
+A^3=A^2*A=
+\begin{bmatrix}
+    10 & 0\\
+    0 & 10\\
+\end{bmatrix}
+\begin{bmatrix}
+    3 & 1\\
+    1 & -3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    30 & 10\\
+    10 & -30\\
+\end{bmatrix}
+\]
+\[
+A^4=A^3*A=
+\begin{bmatrix}
+    30 & 10\\
+    10 & -30\\
+\end{bmatrix}
+\begin{bmatrix}
+    3 & 1\\
+    1 & -3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    100 & 0\\
+    0 & 100\\
+\end{bmatrix}
+\]
+\[...\]
+Following the pattern $A^{2n}=
+\begin{bmatrix}
+    10^n & 0\\
+    0 & 10^n\\
+\end{bmatrix}
+(n\in N)
+$\\
+\[A^{50}=
+\begin{bmatrix}
+    10^{25} & 0\\
+    0 & 10^{25}\\
+\end{bmatrix}
+,A^{51}=
+\begin{bmatrix}
+    3*10^{25} & 10^{25}\\
+    10^{25} & -3*10^{25}\\
+\end{bmatrix}
+\]
+\end{document}
