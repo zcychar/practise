@@ -2,6 +2,6 @@
 .idea
 *.out
 cmake-build-debug
-CMakeLists.txt
 .cache
 build
+CMakeLists.txt
