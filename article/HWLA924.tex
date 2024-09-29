@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\September 24, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}
+Assume $ A = 
+    \begin{bmatrix}
+    \mathbf{a}_1\\ \mathbf{a}_2\\ \vdots \\ \mathbf{a}_n
+    \end{bmatrix} $ , $ B =
+    \begin{bmatrix}
+    \mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_m
+    \end{bmatrix} $ , $ C = 
+    \begin{bmatrix}
+    \mathbf{c}_1\\ \mathbf{c}_2\\ \vdots \\ \mathbf{c}_n
+    \end{bmatrix} $ and $ E =
+    \begin{bmatrix}
+    \mathbf{e}_1 & \mathbf{e}_2 & \cdots & \mathbf{e}_m
+    \end{bmatrix} $\\
+    \begin{enumerate}
+        \item $ A\mathbf{b}_2$
+        \item $ \mathbf{a}_1 B$
+        \item $\mathbf{a}_3 \mathbf{b}_5$
+        \item $\mathbf{c}_1 D \mathbf{e}_1$
+    \end{enumerate}
+\paragraph{Exercise 2.}
+    \[
+        (A+B)^2 =
+        \begin{bmatrix}
+             2 & 2 \\ 3 & 0
+        \end{bmatrix}^2 = 
+        \begin{bmatrix}
+             10 & 4 \\ 6 & 6
+        \end{bmatrix},
+        A^2+2AB+B^2 =
+        \begin{bmatrix}
+            1 & 2 \\ 0 & 0
+        \end{bmatrix} + 
+        \begin{bmatrix}
+            14 & 0 \\ 0 & 0
+        \end{bmatrix} +
+        \begin{bmatrix}
+            1 & 0 \\ 3 & 0
+        \end{bmatrix} =
+        \begin{bmatrix}
+            16 & 2 \\ 3 & 0
+        \end{bmatrix}
+    \]
+    \[
+        (A+B)(A+B)= A^2 + AB + BA + B^2
+    \]
+\paragraph{Exercise 3.}
+    Because when we do a row swapping operation ,we actually won't change which column each entry in.\\
+    When we do a  scaling or addition operation , it follows the distributive law : $ (a_1 + a_2) * c = a_1 * c + a_2 * c $. So the order is arbitrary.\\
+
+\paragraph{Exercise 4.}
+        Assume $ B = \begin{bmatrix} \mathbf{b}_1 & \mathbf{b}_2 &  \mathbf{b}_3 \end{bmatrix} $\\
+        If $ AB=I$ , for $ \mathbf{b}_1= \begin{bmatrix}
+            x_1\\x_2
+        \end{bmatrix}$ , we have
+        \[
+        \left\{
+             \begin{array}
+                {rcl}
+                2*x_1+3*x_2=1\\
+                1*x_1+2*x_2=0\\
+                7*x_1+100*x_2=0\\
+            \end{array}
+        \right.
+        \]
+        No solution.
+\paragraph{Exercise 5.}
+    For $ \mathbf{x}= \begin{bmatrix}
+        1 \\ 0 \\ 0 \\\vdots
+    \end{bmatrix}$ , $ A\mathbf{x} $ equals the first column of A. So if for all the x with one entry 1 and the rest 0 , we have $ A\mathbf{x} = B\mathbf{x}$ , we have A = B.
+\end{document}
