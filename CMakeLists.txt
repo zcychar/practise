@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 # 自动添加所有的源文件
 file(GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES}
+        problem/1942.cpp
+        problem/1943.cpp)
