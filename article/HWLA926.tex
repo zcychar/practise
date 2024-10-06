@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\September 26, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}
+    Write  B as a matrix of column vectors.\\
+    \[AB=
+        \begin{bmatrix}
+            A\mathbf{b}_1 &
+            \ldots &
+            A\mathbf{b}_q
+        \end{bmatrix}
+    \]
+    For any $c_{il} $ in the product AB , it belongs to A $\mathbf{b}_l$ .
+    And 
+    \[
+       \mathbf{c}_l=\mathbf{a}_1b_{1l}+\ldots+\mathbf{a}_pb_{pl}, c_{il} = a_{i1}b_{1l}+ \ldots + a_{ip}b_{pl} = \sum_{k=1}^{p} a_{ik}b_{kl}  
+    \]
+    
+\paragraph{Exercise 2.}
+        (i) There is only one entry in every $\mathbf{p}_i$ equals 1 , and all the 1 entries are in different rows. 
+        So each pair of $\mathbf{p}_i \cdot \mathbf{p}_j$ equals 0.\\\\
+        (ii) Each $ \mid\mid \mathbf{p}_i \mid\mid= 1$ , so each of the vector is a unit matrix.\\\\
+        (iii) To prove $P^{-1}=P^T$ , we need to prove $P^TP=I$ .\\
+        \[  
+            P^TP=
+            \begin{bmatrix}
+                \mathbf{p}_1^T \\
+                \vdots \\
+                \mathbf{p}_n^T
+            \end{bmatrix}
+            \begin{bmatrix}
+                \mathbf{p}_1 & \ldots & \mathbf{p}_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                \mathbf{p}_1^T\mathbf{p}_1 & \ldots & \mathbf{p}_1^T\mathbf{p}_n \\
+                \vdots & \ddots & \vdots \\
+                \mathbf{p}_n^T\mathbf{p}_1 & \ldots & \mathbf{p}_n^T\mathbf{p}_n
+            \end{bmatrix}
+        \]
+        Using (i) and (ii), we know that $\mathbf{p}_1^T = \mathbf{p}_1$, and $ \mathbf{p}_1^2=1$ , So $P^TP=I$ .\\
+
+\paragraph{Exercise 3.}
+    (i) Since $ A^{-1}=A^T$ , we have $A^-1\mathbf{a}_1=A^T\mathbf{a}_1$ .\\
+    \[
+            A^{-1}\mathbf{a}_1= \begin{bmatrix}
+                1 \\
+                0 \\
+                \vdots \\
+                0
+            \end{bmatrix} = \begin{bmatrix}
+                \mathbf{a}_1^T \mathbf{a}_1 \\
+                \vdots \\
+                \mathbf{a}_n^T \mathbf{a}_1
+                \end{bmatrix} 
+ 
+    \]
+    Since $ \mathbf{a}_i^T=\mathbf{a}_i $ , we have for any $i \neq j $ , $ \mathbf{a}_i \mathbf{a}_j = 0 $, 
+    so each pair of  $\mathbf{a}_i$ and $\mathbf{a}_j$ are perpendicular to each other.\\\\
+    (ii) Using the same method as (i), we can prove that $ \mid\mid\mathbf{a}_i^2\mid\mid =\mid\mid\mathbf{a}_i\mid\mid = 1$. So it is a unit vector.\\
+
+\paragraph{Exercise 4.}
+    Since $BA=AC=I$, we have 
+    \[
+        BAA^{-1}=IA^{-1} \Rightarrow B=A^{-1} , A^{-1}AC=A^{-1}I \Rightarrow C=A^{-1} .
+    \]
+    So $A^{-1}=B=C$.\\
+
+\paragraph{Exercise 5.}
+    (i) \[
+     (0+1)\mathbf{v}=1\mathbf{v} \rightarrow  0\mathbf{v}+1\mathbf{v}=1\mathbf{v} + \mathbf{0} \rightarrow 0\mathbf{v}= \mathbf{0}
+    \]
+    (ii) \[
+    0\mathbf{v}=\mathbf{0} \rightarrow (-1+1)\mathbf{v} = \mathbf{0} \rightarrow (-1)\mathbf{v} + \mathbf{v} = \mathbf{0} \rightarrow (-1)\mathbf{v} = -\mathbf{v}
+    \]
+    (iii) \[
+    (-1)\mathbf{v}=-\mathbf{v},(-1)\mathbf{w}=-\mathbf{w} \rightarrow - (\mathbf{v}+\mathbf{w})=(-\mathbf{v})+(-\mathbf{w} )
+    \]
+    (iv) \[
+    c\mathbf{0}=\sum_{1}^{c}\mathbf{0}, \mathbf{0}+\mathbf{0}=\mathbf{0} \rightarrow c\mathbf{0}=\mathbf{0}
+    \]
+    (v)\[
+    (-1)\mathbf{v}=-\mathbf{v} \rightarrow c(-\mathbf{v})=(-c)\mathbf{v} 
+    \]
+    \[
+        \sum_{1}^{c}\mathbf{v}=c\mathbf{v}\rightarrow -\sum_{1}^{c}\mathbf{v}=-(c\mathbf{v}) \rightarrow (-c)\mathbf{v}=-(c\mathbf{v})
+    \]
+\end{document}

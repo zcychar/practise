@@ -6,10 +6,10 @@ ll mod(ll x, ll m) {
   ll ret = x % m;
   return ret < 0 ? ret + m : ret;
 }
+
 string s;
+
 int main() {
-  cin>>s;
-
-
+  cin >> s;
   return 0;
 }
