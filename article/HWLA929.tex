@@ -1,0 +1,174 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\September 29, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}Total m*n matrices.
+
+  \[
+          \begin{bmatrix}
+            1 & 0 &\cdots & 0\\
+            0 & 0 &\cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots\\
+            0 & 0 &\cdots & 0
+          \end{bmatrix},
+          \begin{bmatrix}
+            0 & 1 &\cdots & 0\\
+            0 & 0 &\cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots\\
+            0 & 0 &\cdots & 0
+          \end{bmatrix}
+          \cdots 
+          \underbrace{
+          \begin{bmatrix}
+            0 & 0 &\cdots & 0\\
+            0 & 0 &\cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots\\
+            0 & 0 &\cdots &1
+          \end{bmatrix}
+        }_{\text{n}}
+        \left.
+        \begin{array}{c}
+        \\
+        \\
+        \\
+        \\
+        \\
+        \end{array}
+        \right\}{\text{m}}
+  \]
+
+  \paragraph{Exercise 2.} The given vector space has one basis element. Let it be $\mathbf{e}$\\
+  So for any $x\in V$, we can write $x$ as a "scalar multiple" of $\mathbf{e}$. That is, there exists a scalar $\alpha$ such that $x = \alpha\otimes\mathbf{e}=\mathbf{e}^\alpha$.
+
+  
+  \paragraph{Exercise 3.} Yes.
+  Define a vector space \[\mathbf{V} = \{0,1\} \] with  \[x \oplus x'=(x+x')mod 2, x \otimes x'=(x*x') mod 2.\] \\
+  It only has two vectors{(0),(1)}.
+
+  \paragraph{Exercise 4.} 
+  $(\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_4),(\mathbf{v}_1,\mathbf{v}_3,\mathbf{v}_5),(\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_6),(\mathbf{v}_4,\mathbf{v}_5,\mathbf{v}_6)$ ,those groups of vectors are each linear dependent.So the largest possible number is 3.
+  \paragraph{Exercise 5.}
+  (i)\[
+    \left\{
+    \begin{array}{c}
+    2x_1+3x_2+4x_3+5x_4+1x_5=0\\
+    x_2+x_4=0\\
+    \end{array}\right.
+    \rightarrow
+    \left\{
+    \begin{array}{c}
+    2x_1+3x_3+2x_4+1x_5=0\\
+    x_2+x_4=0\\
+    \end{array}\right.
+  \]
+  \[
+  \mathbf{N}(A)=span
+  \left\{
+    \begin{bmatrix}
+    -2\\0\\1\\0\\0
+    \end{bmatrix}
+    \begin{bmatrix}
+      -2\\-1\\0\\2\\0
+      \end{bmatrix}   
+      \begin{bmatrix}
+        -1\\0\\0\\0\\2
+        \end{bmatrix} 
+    \right\},
+    \mathbf{C}(A)=span
+    \left\{
+      \begin{bmatrix}
+      1\\0
+      \end{bmatrix}
+      \begin{bmatrix}
+      3\\1
+        \end{bmatrix}   
+      \right\}
+  \]
+  (ii)\[
+    \mathbf{N}(A)=span
+    \left\{
+      \begin{bmatrix}
+      1\\0\\0\\2
+      \end{bmatrix}
+      \begin{bmatrix}
+        0\\0\\2\\1
+        \end{bmatrix}   
+        \begin{bmatrix}
+          0\\2\\0\\-1
+          \end{bmatrix} 
+      \right\},
+      \mathbf{C}(A)=span
+      \left\{
+        \begin{bmatrix}
+        1\\0\\0\\0\\0
+        \end{bmatrix}
+        \begin{bmatrix}
+        0\\0\\1\\1\\0
+          \end{bmatrix}   
+          \begin{bmatrix}
+        0\\0\\0\\2\\1
+            \end{bmatrix} 
+          \begin{bmatrix}
+              0\\1\\0\\0\\0
+        \end{bmatrix} 
+        \right\}
+  \]
+  The null spaces and column spaces are written as a span of their basis. So the vectors above are their basis.
+  \paragraph{Exercise 6.}
+
+  \[
+    \left\{
+      \begin{align}
+      x_1+(1-k)x_2+(1-k)x_3+(1-k)x_4&=0\\
+      x_2+(1-k)x_3+(1-k)x_4&=0\\
+      x_3+(1-k)x_4&=0\\
+      -kx_1-kx_2-kx_3+(1-k)x_4&=0\\
+      \end{align}\right.
+      \rightarrow
+      \left\{
+      \begin{align}
+      x_1-kx_2&=0\\
+      x_2-kx_3&=0\\
+      x_3+(1-k)x_4&=0\\
+      -kx_1-kx_2-kx_3+(1-k)x_4&=0
+      \end{align}\right.
+\]
+\[
+\rightarrow
+(k^3+k^2+k-1)(1-k)x_4=0
+\]
+
+If $k=1$ ,the equation system will have infinite many solutions.So the vectors are linear dependent.\\
+
+When $k \neq 1$ the vectors are linear independent.
+\paragraph{Exercise 7.}\\
+
+(i)Assume $ \mathbf{v} \in span(S_1)$,$\mathbf{v}$ can be expressed by linear combination of vectors in span(S1). Since $S_1 \subseteq S_2$, $ \mathbf{v} \in S_2$ .So $\mathbf{v}$ can be written in a linear combination form of vectors in $span(S_2)$, which is just how $span(S_2)$ is defined.\\
+So every vector in $span(S_1)$ is in $span(S_2)$. $ span(S_1) \subseteq span(S_2) $.\\
+
+(ii)If $\text{span}(S_1) \neq \text{span}(\text{span}(S_2))$, it means that $\text{span}(S_1)$ isn't the \mathbf{SMALLEST} subspace of $V$ containing $S_1$. Contradict!\\
+
+(iii)If $S_1 \subseteq \text{span}(S_2)$ , so $\text{span}(S_1) \subseteq S_1 \subseteq \text{span}(S_2)$
+
+\paragraph{Exercise 8.}\\
+
+  (i)$S_1$ can be represented by $span(S_1)$.If $ span(S_1) \subseteq span(S_2)$.\\Every $\mathbf{v}\in S_1$ can be represented by $span(S_2)$.So $S_1$ can be represented by $S_2$, if and only if  $ span(S_1) \subseteq span(S_2)$.\\
+
+  (ii)If $S_1$ can be represented by $S_2$ ,then all the $v\in span(S_1)\subseteq S_1$ can also be represented by $span(S_2)$.Because all $\mathbf{v}\in S$ can be represented by $span(S_1)$ , so it can be represented by $span(S_2)$ \\
+  So S can be represented by S_2.\\
+
+  (iii) If $\mathbf{v}$ can be represented by $S \setminus \mathbf{v}$ ,then $ \mathbf{v} \notin span(S)$. Because any vector in span(S) cannot be represented by other vectors in span(S).So we have \[span(S \setminus \mathbf{v}) = span(S)\]
+
+\end{document}
