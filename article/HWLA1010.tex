@@ -1,0 +1,159 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\October 10, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}
+(i) $\Rightarrow$ (ii) \\
+If exists a B with AB = I, that means A has n pivots.\\
+So there exists a medthod of Gauss-Jordan process that produces 
+\[
+    D\cdots E\cdots P\cdots E\cdots A = I 
+\]
+Let $C=D\cdots E\cdots P\cdots E\cdots$, then we have $CA=I$.\\
+(ii) $\Rightarrow$ (i) \\
+Since $CA = I$ and $(CA)^T=A^TC^T$, we have $A^TC^T=I^T=I$.\\
+From previous provement, we know there exists $DA^T=I$\\
+So $(DA^T)^T=AD^T=I$, let $D^T=B$, AB = I exists.
+
+\paragraph{Exercise 2.}
+\[
+A=\begin{bmatrix}
+    1 & 1 & 0 & 0\\
+    0 & 0 & 1 & 1
+\end{bmatrix}
+\]
+
+\paragraph{Exercise 3.}
+(i)\[
+A\mathbf{x}=\mathbf{b} \Rightarrow \begin{bmatrix}
+    1 & 0 & 1/5 & 7/5\\
+    0 & 1 & -3/5 & 7/5\\
+    0 & 0 & 0 & 0
+\end{bmatrix}\mathbf{x}=\begin{bmatrix}
+    4/5\\3/5\\ \lambda-5
+\end{bmatrix}
+\]
+If $\lambda = 5$ ,it has infinite many solutions,if $\lambda \neq 5$ ,it has no solution.\\
+(ii)\[
+(\lambda + 3)(x_1+x_2+x_3+x_4)= (1 + \lambda + \lambda^2 + \lambda^3) \Rightarrow (x_1+x_2+x_3+x_4)=\frac{b}{c} (c \neq 0)
+\]
+If  $\lambda = 1$ it has infinite many solutions.\\
+If $\lambda = -3$ it has no solution\\
+Else we have $\begin{bmatrix}
+    x_1\\x_2\\x_3\\x_4
+\end{bmatrix}=\begin{bmatrix}
+    \frac{\frac{b}{c}-1}{\lambda - 1}\\
+    \frac{\frac{b}{c}-\lambda}{\lambda - 1}\\
+    \frac{\frac{b}{c}-\lambda^2}{\lambda - 1}\\
+    \frac{\frac{b}{c}-\lambda^3}{\lambda - 1}\\
+\end{bmatrix}$
+\paragraph{Exercise 4.}
+(i) \[
+P_{12}=\begin{bmatrix}
+    0 & 1 & 0\\
+    1 & 0 & 0\\
+    0 & 0 & 1
+\end{bmatrix},
+E_{31}=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    -2 & 0 & 1 \\
+\end{bmatrix}
+E_{32}=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 1 & 1
+\end{bmatrix}
+\]
+Failure :Temporary failure for a zero pivot.Permanent failure with no solution.(A pivot is missing and 0x = 1)\\
+(ii) \[
+    E_{21}=\begin{bmatrix}
+        1 & 0 & 0\\
+        -2 & 1 & 0\\
+        0 & 0 & 1 \\
+    \end{bmatrix}
+    E_{31}=\begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        -3 & 0 & 1
+    \end{bmatrix}
+    E_{32}=\begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & -2 & 1
+    \end{bmatrix}
+    \]
+Failure :Permanent failure with infinite many solution.(A pivot is missing and 0x = 0)\\
+(iii)\[
+    P_{21}=\begin{bmatrix}
+        0 & 1 & 0\\
+        1 & 0 & 0\\
+        0 & 0 & 1 \\
+    \end{bmatrix}
+    E_{31}=\begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        -6/7 & 0 & 1  
+    \end{bmatrix}
+    E_{32}=\begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 13/7 & 1
+    \end{bmatrix}
+\]Failure:Temporary failure for a zero pivot.
+
+\paragraph{Exercise 5.}
+(i)\[
+\begin{bmatrix}
+    16 & 15 & 14 & 13 & 1 & 0 & 0 & 0\\
+    5 & 4 & 3 & 12 & 0 & 1 & 0 & 0\\
+    6 & 1 & 2 & 11 & 0 & 0 & 1 & 0\\
+    7 & 8 & 9 & 10 & 0 & 0 & 0 & 1
+\end{bmatrix} \Rightarrow \begin{bmatrix}
+     1 & 0 & 0 & 0&83/690&-2/15&1/6&-62/345\\
+     0 & 1 & 0 & 0&34/345&11/30&-1/3&-139/690\\
+     0 & 0 & 1 & 0&-17/138&-1/3&1/6&26/69\\
+     0 & 0 & 0 & 1&-6/115&1/10&0&11/230\\
+\end{bmatrix}
+\]
+(ii)
+\[
+    \begin{bmatrix}
+        1 & 1 & 10 & 1 & 1 & 0 & 0 & 0\\
+        1 & 10 & 1 & 1 & 0 & 1 & 0 & 0\\
+        1 & 1 & 1 & 10 & 0 & 0 & 1 & 0\\
+        10 & 1 & 1 & 1 & 0 & 0 & 0 & 1
+    \end{bmatrix} \Rightarrow \begin{bmatrix}
+         1 & 0 & 0 & 0&-1/117&-1/117&-1/117&4/39\\
+         0 & 1 & 0 & 0&-1/117&4/39&-1/117&-1/117\\
+         0 & 0 & 1 & 0&	4/39&-1/117&-1/117&-1/117\\
+         0 & 0 & 0 & 1&-1/117&-1/117&4/39&-1/117\\
+    \end{bmatrix}
+\]
+(iii)\[
+    \begin{bmatrix}
+        0 & 1 & 1 & 1 & 1 & 0 & 0 & 0\\
+        1 & \ddots & \ddots & 1 & 0 & \ddots & \ddots & 0\\
+        1 & \ddots & \ddots & 1 & 0 & \ddots & \ddots & 0\\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 & 1
+    \end{bmatrix} \Rightarrow \begin{bmatrix}
+         1 & 0 & 0 & 0&-2/3&1/3&1/3&1/3\\
+         0 & \ddots & \ddots & 0&1/3& \ddots & \ddots&1/3\\
+         0 & \ddots & \ddots & 0&1/3& \ddots & \ddots&1/3\\
+         0 & 0 & 0 & 1&1/3&1/3&1/3&-2/3\\
+    \end{bmatrix}
+\]
+The process are way too long to print.Only show the results.
+\end{document}

@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 add_executable(Game Game.cpp)
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=undefined,address")

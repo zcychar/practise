@@ -11,35 +11,20 @@ unsigned long long p,x,n,a,y,k,powx=1,ans;
 unsigned long long fpow(unsigned long long k1) {
     unsigned long long tmp=0,base=y,cnt=k1;
     while(cnt) {
-        if(cnt%2)tmp=(tmp+base)%p;
-       base=(base*base)%p;
+        if(cnt%2)tmp=(tmp*base)%p;
+        base=(base*base)%p;
         cnt/=2;
     }
     return tmp;
 }
 unsigned long long cal(unsigned long long k1) {
-    if(k1<=10) {
+    if(k1<=100) {
         unsigned long long cnt=0,tmp=1;
         for(int i=0;i<=k1;++i) {
             cnt=(cnt+tmp)%p;
             tmp=(tmp*y)%p;
         }
         return cnt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     }
     if(k1%2) {
         return cal((k1-1)/2)%p*(1+fpow((k1+1)/2))%p;
