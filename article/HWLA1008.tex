@@ -1,0 +1,123 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\October 8, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}
+(i)
+\begin{itemize}
+\item$S'$ is a basis for $\text{span}(S) \Rightarrow S'$ is maximally linearly independent:\\
+From the definition of basis, $S'$ is linearly independent.$S'$ satisfies the definition of maximally linearly independent.
+For any $\mathbf{v} \in span(S)\backslash S'$, it can be represented by a linear combination of vectors in $S'$ ,so $S' \cup \mathbf{v}$ is linear dependent. 
+\item $S'$ is maximally linearly independent $\Rightarrow S'$ is a basis for $\text{span}(S)$: \\
+From the definition of maximally linearly independent, for any $\mathbf{v} \in S\backslash S'$ ,it can be repensented by a linear combination of vectors in $S'$.\\
+For any vector in $span(S)$,it can be repensented by vectors in $S$ ,and inductively, be repensented by vectors in $S'$. Also $S'$ is linear independent, so it satisfies a basis for $span(S)$.
+\end{itemize}
+
+(ii)
+\begin{itemize}
+    \item$S$ is a basis for $V \Rightarrow S$ is maximally linearly independent in $V$:\\
+    Since $S$ is a basis, it is linear independent and spans $V$.\\
+    So if it is not maximally linear independent, there exists $\mathbf{v} \in V \setminus S$ that $S\cup \mathbf{v}$ is linear independent.\\
+    This contradicts that $S$ spans $V$.\\
+    \item $S$ is maximally linearly independent $\Rightarrow S$ is a basis for $V$: \\
+    If $S$ isn't a basis for $V$, there exists $ \mathbf{v} \in V $that $\mathbf{v} \notin span(S)$.\\
+    So $ S\cup \mathbf{v}$ remains linear independent.Contradict the definition.
+    \end{itemize}
+(iii)Assume $S'$ is a subset of $S$ and is always linear independent. To build a $S'$, we inductively add vectors in $S$ one by one.Until no more vectors can be added.Since $S$ is a finite set ,the process will always have a end.\\
+So for any $\mathbf{v} \in S \setminus S'$, $S'\cup \mathbf{v}$ will lead to linear dependent.\\
+Now $S'$ satisfies the definition of maximally linear independent.
+
+\paragraph{Exercise 2.}
+First,consider the situation that any of $\mathbf{v},\mathbf{w}=\mathbf{0}$.\\Obviously, (i) or (ii) will hold in this situation.\\
+Under the condition that none of $\mathbf{v},\mathbf{w}=\mathbf{0}$.Since $\mathbf{u}_1\cdots\mathbf{u}_n,\mathbf{v},\mathbf{w}$ are linearly dependent, there exists 
+\[
+    c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n+a\mathbf{v}+b\mathbf{w}=\mathbf{0} 
+\]
+(Assume not all $c1 \cdots cn,a,b$ are zero.)\\
+Since $\mathbf{u}_1\cdots\mathbf{u}_n$ are linearly dependent ,the only way that
+\[
+    c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n=\mathbf{0} 
+\]
+is all the coefficients are zero. So a,b cannot all be zero. So we have:\\
+If $b=0,a\neq 0$, $c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n=-a\mathbf{v}$.(i) holds.\\
+If $a=0,b\neq 0$, $c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n=-b\mathbf{w}$.(ii) holds.\\
+If $a\neq 0,b\neq 0$, $c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n=-b\mathbf{w}-\mathbf{v}$.(iii) holds.
+
+\paragraph{Exercise 3.}$\mathbf{v}_3$
+\paragraph{Exercise 4.}If $V$ has finite many vectors and they are all linearly independent.
+\paragraph{Exercise 5.}(1,1,0,1),(10,7,2,3),(0,0,1,0),(0,0,0,1)
+\paragraph{Exercise 6.}\begin{itemize}
+\item $\mathbf{W} \subsetneq \mathbf{V} \Rightarrow dim(\mathbf{W}) < dim(\mathbf{V})$\\
+    Assume $dim(\mathbf{W}) = dim(\mathbf{V})$.\\ Since $\mathbf{W} \subsetneq \mathbf{V}$, there exists $\mathbf{v} \in \mathbf{V} \setminus \mathbf{W}$ and cannot be represented by the basis of $\mathbf{W}$.So $dim(\mathbf{W}\cup \mathbf{v})=dim(\mathbf{W})+1>\mathbf{V}$\\
+    Since $\mathbf{v} \cup \mathbf{W} \in \mathbf{V}$, $dim(\mathbf{v} \cup \mathbf{W} ) \leq dim (\mathbf{V})$. Contradict!
+\item $\mathbf{W} \subsetneq \mathbf{V} \Leftarrow dim(\mathbf{W}) < dim(\mathbf{V})$\\
+    Assume $\mathbf{W}=\mathbf{V}$, from the definition of basis ,if $dim(\mathbf{W}) < dim(\mathbf{V})$, then the current basis of V doesn't hold.Contradict!
+\end{itemize} 
+
+\paragraph{Exercise 7.}
+(i)Since all the column vectors of A $\in R^m$ , so \[
+    dim(C(A))<=dim(R^m)=m.
+\]
+So the basis of $C(A)$ has at most m vectors. Since we have n column vectors, they are linearly dependent.\\
+(ii)For A $\begin{bmatrix}
+    \mathbf{a}_1 & \cdots & \mathbf{a}_n 
+\end{bmatrix}$, we have the linear combination:
+\[
+x_1\mathbf{a}_1+\cdots + x_n\mathbf{a}_n = \mathbf{b}
+\]
+And since A is linearly dependent ,there exists nonzero solution to :
+\[
+    c_1\mathbf{a}_1+\cdots + c_n\mathbf{a}_n = \mathbf{0}
+\]
+So if $A\mathbf{x}=\mathbf{b}$ holds, $A \begin{bmatrix}
+    x_1+k*c_1\\
+    \vdots\\
+    x_n+k*c_n
+\end{bmatrix} = \mathbf{b}$ $(k\in Z)$ holds too ,it has infinite many solutions.\\
+If $dim(C(A))<m$ ,which means $span(C(A)) \subsetneq R^m$,there exists $\mathbf{v}\in R^m \setminus span(C(A))$ that has no solution.\\
+(iii)\begin{itemize}
+    \item column rank of A is m $\Rightarrow$ $A\mathbf{x}=\mathbf{b}$ has infinite many solutions\\
+        From previous provements,we know that if $dim(C(A))=m=R^m$, $span(C(A))=R^m$, and if the equation has a solution, it will have infinite many solutions.
+    \item column rank of A is m $\Leftarrow$ $A\mathbf{x}=\mathbf{b}$ has infinite many solutions\\
+        If there always exists a solution, that means $R^m \subseteq span(C(A))$. Since the column vectors $\in R^m$ So $span(C(A)) = R^m $.So the column rank of A is m.
+\end{itemize}
+
+\paragraph{Exercise 8.}
+    Write \[
+    A=\begin{bmatrix}
+        \mathbf{a}_1\\
+        \vdots\\
+        \mathbf{a}_m
+    \end{bmatrix}
+    \]As row vectors in $R^n$.So does \[
+    I=\begin{bmatrix}
+    \mathbf{e}_1\\
+    \vdots\\
+    \mathbf{e}_n
+    \end{bmatrix}
+    \].
+    Assume there exist B thats holds the equation, then
+    \[
+    \mathbf{e}_1 \cdots \mathbf{e}_n \in span(\{\mathbf{a}_1 \cdots \mathbf{a}_m\})
+    \]
+    So it implies
+    \[
+    R^n=span(\{ \mathbf{e}_1\cdots \mathbf{e}_n\}) \subseteq span(span(\{\mathbf{a}_1 \cdots \mathbf{a}_m\}))=span(\{\mathbf{a}_1 \cdots \mathbf{a}_m\}) \subseteq R^n
+    \]
+    So the row rank of A is n.\\
+
+    If the row rank of A is less than n.That means $span(\{\mathbf{a}_1 \cdots \mathbf{a}_m\}) \subsetneq R^n$. So there must exist a $\mathbf{e}_i \in R^n \setminus R(A)$ that can not be reresented by linear combinations of the row vectors.
+    Unless $dim(span(\{\mathbf{a}_1 \cdots \mathbf{a}_m\}))=dim(R^n)$.So the row rank must be n.
+\end{document}

@@ -29,7 +29,6 @@ int get_width(Map *map);
 
 //return the width of the map
 
-
 struct Snake {
   // store the necessary information of the snake
   // use any data structure you like
@@ -72,7 +71,7 @@ struct Snake {
       }
     }
     int current_position = head_point;
-    for (int i = 1; i < length; ++i) {
+    for (int i = 1; i < length-1; ++i) {
       current_position = body[current_position].next_position;
       dead_body[body[current_position].x][body[current_position].y] = true;
     }
@@ -143,19 +142,18 @@ struct Snake {
     //return the length of the snake and a pointer to the array of the position of the snake
     //you can store the head as the first element
     //------------------------------------------
-    // std::vector<std::pair<int, int> > body_path(length,std::make_pair(0,0));
-    std::pair<int, int> body_path[5015];
-    for(int i=0;i<length;++i)body_path[i]=std::make_pair(-1,-1);
+
+    auto body_path=new std::pair<int,int> [505];
+
     int current_position = head_point;
     std::pair<int, int> current_location = std::make_pair(body[current_position].x, body[current_position].y);
-    //body_path.push_back(current_location)  ;
-    body_path[0] = current_location;
+    body_path[0]=current_location;
     for (int i = 1; i < length; ++i) {
       current_position = body[current_position].next_position;
       current_location = std::make_pair(body[current_position].x, body[current_position].y);
       body_path[i] = current_location;
     }
-    std::pair<int, std::pair<int, int> *> value = std::make_pair(length, body_path);
+    std::pair<int, std::pair<int, int> *> value = std::make_pair(length,body_path);
     return value;
   }
 };
@@ -288,6 +286,7 @@ struct Map {
       }
       std::cout <<std::endl;
     }
+    delete[] position;
   }
 };
 
@@ -304,7 +303,10 @@ struct Game {
     score = 0;
     round = 0;
   }
-
+  ~Game() {
+    delete map;
+    delete snake;
+  }
   bool step() {
     char str[MaxWidth];
     std::cin >> str;
