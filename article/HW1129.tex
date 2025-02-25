@@ -1,0 +1,121 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\November 29, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Exercise 1.}\\
+\begin{itemize}
+    \item Assume the result of left side $[\mathbf{u}_1,\cdots , \mathbf{u}_m]$\[
+    \mathbf{u}_i=\sum_{k=1}^{n}(A+A')(k,i)\mathbf{v}_i=\sum_{k=1}^{n}A(k,i)\mathbf{v}_i+\sum_{k=1}^{n}A'(k,i)\mathbf{v}{i}
+    \]
+    So the equation holds.\\
+    \item Let $C=AB$, $C_{ij}=\sum_{q=1}^{m}A(i,q)B(q,j)$. Assume the result of left side $[\mathbf{u}_1,\cdots , \mathbf{u}_l]$.
+    \[
+    \mathbf{u}_i=\sum_{k=1}^{n}\sum_{q=1}^{m}A(k,q)B(q,i)\mathbf{v}_k
+    \]
+    Consider the right side \[
+    \mathbf{u}'_i=\sum_{q=1}^{m}(\sum_{k=1}^{n}A(k,i)\mathbf{v}_k)B(q,i)=\mathbf{u}_i
+    \]
+    So the equation holds.
+\end{itemize}
+
+\textbf{Exercise 2.}\\
+(i)We have $(x,y)=c_1\mathbf{v}_1+c_2\mathbf{v}_2$
+\[
+\left\{
+    \begin{array}{ll}
+        x=c_1+2c_2\\
+        y=c_1+3c_2
+    \end{array}
+\right.
+\]
+The coordinate vector $(3x-2y,y-x)$.\\
+
+(ii)\[
+\begin{bmatrix}
+    1 & 2 \\
+    1 & 3
+\end{bmatrix}M=\begin{bmatrix}
+    4 & 6 \\
+    5 & 7 \\
+\end{bmatrix}
+\]
+\[
+M=\begin{bmatrix}
+    2 & 4 \\
+    1 & 1
+\end{bmatrix}
+\]
+
+\textbf{Exercise 3.}\\
+(i)\[
+T(S(\mathbf{u}_1+\mathbf{u}_2))=T(S(\mathbf{u}_1)+S(\mathbf{u}_2))=T(S(\mathbf{u}_1))+T(S(\mathbf{u}_2))
+\]
+\[
+T(S(c\mathbf{u}))=T(cS(\mathbf{u}))=cTS(\mathbf{u})
+\]
+So TS is a linear transformation.\\
+
+(ii) Assume the coordinate vector of $\mathbf{u}$ is $(c_1,\cdots , c_n)$. From definition, we can represent the coordinate vector of $S(\mathbf{u})$ with respect to $\overline{\mathbf{w}}$\[
+A_S\begin{bmatrix}
+    c_1\\
+    \vdots\\
+    c_n
+\end{bmatrix}
+\]
+So the coordinate vector of $T(S(\mathbf{u}))$ will be \[
+A_T(A_S\begin{bmatrix}
+    c_1\\
+    \vdots\\
+    c_n
+\end{bmatrix})=(A_TA_S)\begin{bmatrix}
+    c_1\\
+    \vdots\\
+    c_n
+\end{bmatrix}
+\]
+So $A_{TS}=A_TA_S$.\\
+
+\textbf{Exercise 4.}\\
+(i)
+\begin{itemize}
+    \item \[
+(T+T')(\mathbf{v}_1+\mathbf{v}_2)=T(\mathbf{v}_1+\mathbf{v}_2)+T'(\mathbf{v}_1+\mathbf{v}_2)=T(\mathbf{v}_1)+T'(\mathbf{v}_1)+T(\mathbf{v}_2)+T'(\mathbf{v}_2)=(T+T')(\mathbf{v}_1)+(T+T')(\mathbf{v}_2)
+\]
+\[
+(T+T')(c\mathbf{v})=T(c\mathbf{v})+T'(c\mathbf{v})=c(T+T')(\mathbf{v})
+\]
+\item \[
+    cT(\mathbf{v}_1+\mathbf{v}_2)=cT(\mathbf{v}_1)+cT(\mathbf{v}_2)
+\]
+\[
+cT(a\mathbf{v})=caT(\mathbf{v})
+\]
+\end{itemize}
+(ii) \begin{enumerate}
+    \item $T+T'(\mathbf{v})=T(\mathbf{v})+T'(\mathbf{v})=(T'+T)(\mathbf{v})$
+    \item $T_1+(T_2+T_3)=T_1+T_2+T_3=(T_1+T_2)+T_3$
+    \item LET $T_0(\mathbf{v}) \equiv 0$, $T_0+T = T$.
+    \item For every T, we can have $T'$ that for every $\mathbf{v}$, $T(\mathbf{v})=-T'(\mathbf{v})$. So $T+T'=0$
+    \item Let c=1, $1\cdot T=T$.
+    \item From we have proved in (i), $c_1(c_2T)=(c_1c_2)T$.
+    \item Obvious $c(T+T')=cT+cT'$.
+    \item Also $(c_1+c_2)T=c_1T+c_2T$.
+\end{enumerate}
+
+(iii)The dimension is m*n.\\
+Proof:Consider transforming T into the corresponding matrix $A_T$. We have proved in class that this transformation is a bijection. So each T corresponds to a unique m*n matrix $A_T$.
+Since the vector space $M_{m*n}\{\mathbb{R}\}$ has dimension m*n, so do $\textbf{T(V,W)}$.\\
+
+\end{document}

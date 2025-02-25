@@ -1,0 +1,170 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\October 22, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Exercise 1.}
+  \paragraph{1.1}
+    \textit{
+      \[
+      rank(A)+dim(N(A))=m , rank(BA)+dim(N(BA)) = m
+      \]
+      Since each row vector in BA can be seen as a linear combination of row vectors of A. So
+      \[
+      dim(C((BA)^T)) \leq dim(C(A^T)) \Rightarrow rank (BA) \leq rank(A) 
+      \] 
+      So 
+      \[
+      dim(N(A)) \leq dim(N(BA)) \Rightarrow N(A) \subseteq N(BA)
+      \]
+    }
+  \paragraph{1.2}
+    \textit{
+       First we reduce A into its reduced row echelon form R with $r=rank(A)$ pivots.
+       \[
+       A \Rightarrow \begin{bmatrix}
+        \mathbf{0} & \mathbf{U}
+       \end{bmatrix}
+       (\mathbf{U} \text{ is an n*r upper-trangular matrix })
+       \]
+       Since $rank(B)=n$, each column vector of B is linearly independent to other.\\ 
+       So the ith column vector of BU is a linear combination of $\mathbf{b}_1 \cdots \mathbf{b}_i$ with the ith coefficient $\neq 0$. So the column vectors are independent to others.\\
+       \[
+       BA=\begin{bmatrix}
+        \mathbf{0} & BU
+       \end{bmatrix}
+       \]
+       So $dim(C(BA))=dim(C(BU))=dim(C(U))=r$, $rank(BA)=rank(A)$.\\
+       From the equations in 1.1, we can conclude
+        \[
+         N(A)=N(BA)
+       \]
+       The converse is't true. Let $A=\mathbf{0}$. Obviously we can not conclude $rank(B)=n$.
+    }
+\paragraph{Exercise 2.}
+  \textit{
+    \[
+    A\mathbf{x}=0 \Rightarrow \begin{bmatrix}
+        2 & 4 & 6 & 4\\
+        2 & 5 & 7 & 6\\
+        2 & 3 & 5 & 2\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1\\x_2\\x_3\\x_4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        4 \\ 3 \\ 5
+    \end{bmatrix}
+    \]
+    Apply Gauss-Jordan to the augmented matrix, we get
+    \[
+    \begin{bmatrix}
+        1 & 0 & 1 & -2 & 4\\
+        0 & 1 & 1 & 2 & -1\\
+        0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+    \]
+    So we get a patricular solution to $A\mathbf{x}=\mathbf{b}$.
+    \[
+    \mathbf{x}_p=
+    \left\{
+    \begin{aligned}
+        x_1=4\\
+        x_2=-1\\
+        x_3=0\\
+        x_4=0
+    \end{aligned}
+    \right.
+    \]
+    And we can get the special solutuons of N(A)
+    \[
+      \mathbf{s}_1=\begin{bmatrix}
+        3 \\ -2 \\ 1 \\ 0
+      \end{bmatrix} , 
+      \mathbf{s}_2=\begin{bmatrix}
+        6 \\ -3 \\ 0 \\ 1
+      \end{bmatrix}
+    \]
+    So the complete solution is\[
+    \mathbf{x}=\mathbf{x}_p+c_1\mathbf{s}_1+c_2\mathbf{s}_2
+    \]
+  }
+\paragraph{Exercise 3.}
+  \textit{
+    Assume we have a linear combination
+    \[
+    c_1\mathbf{v}_1+ \cdots c_n\mathbf{v}_n=0
+    \]
+    Multiply $\mathbf{v}_1$ to the equation. Since $\mathbf{v}_i \perp \mathbf{v}_j$, we have
+    \[
+    \mathbf{v}_1(c_1\mathbf{a}_1+ \cdots c_n\mathbf{v}_n) = 0*\mathbf{v}_1 \Rightarrow c_1 \mathbf{v}^2_1 = 0
+    \]
+    Since $\mathbf{v}^2_1 \neq 0$, $c_1 = 0$.
+    In the same way we conclude $c_1= \cdots = c_n = 0$, so $\mathbf{v}_1\cdots \mathbf{v}_n$ are linearly independent. 
+  }
+\paragraph{Exercise 4.}
+  \paragraph{4.1}
+  \textit{
+    Since a non-zero vector can not be prependicular to itself, there won't exist a vector $\mathbf{v}$ expect $\mathbf{0}$ that exists in both sets.\\
+    Otherwise it means that the vector is prependicular to itself.
+  }
+  \paragraph{4.2}
+  \textit{
+    We have 
+    \[
+    \mathbf{v}_1-\mathbf{v}_2=\mathbf{w}_1-\mathbf{w}_2
+    \]
+    Since $V,W$ are subspaces, we have 
+    \[
+        \mathbf{v}_1-\mathbf{v}_2 \in V , \mathbf{w}_1-\mathbf{w}_2 \in W
+    \]
+    From what we proved in 4.1, we know
+    \[
+        \mathbf{v}_1-\mathbf{v}_2=\mathbf{w}_1-\mathbf{w}_2=\mathbf{0}
+    \]
+    So 
+    \[
+        \mathbf{v}_1=\mathbf{v}_2 , \mathbf{w}_1=\mathbf{w}_2
+    \]
+  }
+  \paragraph{4.3}\\
+  \textit{
+    (i) $\mathbf{0}$ is in $V+W$.\\
+    (ii) \[
+    \mathbf{v}_1,\mathbf{v}_2 \in V \Rightarrow \mathbf{v}_1+\mathbf{v}_2 \in V , \mathbf{w}_1,\mathbf{w}_2 \in W \Rightarrow \mathbf{w}_1+\mathbf{w}_2 \in W 
+    \]
+    \[
+      \Rightarrow \mathbf{v}_1+\mathbf{v}_2+\mathbf{w}_1+\mathbf{w}_2 \in V+W
+    \]
+    (iii) \[
+    \mathbf{v} \in V \Rightarrow c\mathbf{v} \in V , \mathbf{w} \in W \Rightarrow c\mathbf{w} \in W
+    \]
+    \[
+    \Rightarrow c(\mathbf{v}+\mathbf{w}) \in V+W
+    \]
+    Since V,W are subspaces of R^n, so V+W is a subspace of R^n.
+  }
+  \paragraph{4.4}
+  \textit{
+    Assume $\mathbf{v}_1 \cdots \mathbf{v}_r$ is a basis for V, and $\mathbf{w}_1 \cdots \mathbf{w}_s$ is a basis for W.\\
+    For any $ \mathbf{v} \in V$, it can be represented by a linear combination of the basis, so does $ \mathbf{w} \in W$.\\
+    So for any $\mathbf{v}+\mathbf{w} \in V+W $ ,it can be represented by
+    \[
+    c_1\mathbf{v}_1 + \cdots + c_r\mathbf{v}_r +c_{r+1}\mathbf{w}_1 + \cdots + c_{r+s} \mathbf{w}_s
+    \] 
+    From 4.2 we know the way to represent this $\mathbf{v}+\mathbf{w}$ vector is unique. \\
+    And obvoiusly each $\mathbf{v}_i$ and $mathbf{w}_i$ are linearly independent. So they form a basis of V+W
+  }
+\end{document}

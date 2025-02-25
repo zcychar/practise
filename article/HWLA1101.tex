@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\November 1, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Exercise 1.}
+
+\[
+\mathbf{q}_1 = \begin{bmatrix}
+    \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \\ 0
+\end{bmatrix}
+\mathbf{q}_2 = \begin{bmatrix}
+    \frac{\sqrt{3}}{3} \\ \frac{\sqrt{3}}{3} \\ -\frac{\sqrt{3}}{3}
+\end{bmatrix}
+\]
+
+\textbf{Exercise 2.}
+
+\textbf{2.1}
+\[
+\mathbf{q}_1=\frac{\mathbf{a}_1}{\Vert \mathbf{a}_1 \Vert} = (\dfrac{1}{10},\dfrac{3}{10},\dfrac{2}{5},\dfrac{1}{2},\dfrac{7}{10})
+\]
+\[
+\mathbf{q}_2=\mathbf{a}_2-\dfrac{\Vert \mathbf{a}_2 \Vert \cos \theta_1}{\Vert \mathbf{q}_1 \Vert}\mathbf{q}_1=(-\dfrac{7}{10},\dfrac{3}{10},\dfrac{2}{5},-\dfrac{1}{2},\dfrac{1}{10})
+\]
+
+\textbf{2.2} The projection vector of (1,0,0,0,0) is
+\[
+\mathbf{p}=(\dfrac{1}{2},-\dfrac{9}{50},-\dfrac{6}{25},\dfrac{2}{5},0)
+\]
+
+\textbf{Exercise 3.}\\
+
+\textbf{3.1}
+From the second equation we know\[
+\Delta (\mathbf{a}_1,\cdots,c\mathbf{a}_j,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n) = 0
+\]
+Combine that with the first equation\[
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i+c\mathbf{a}_j,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n) =
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n) + \Delta (\mathbf{a}_1,\cdots,c\mathbf{a}_j,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+\]
+\[
+=\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+\]
+
+\textbf{3.2}
+Add column j to column i
+\[
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+=
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i+\mathbf{a}_j,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+\]
+Substract column i from column j
+\[
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+=
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i+\mathbf{a}_j,\cdots,-\mathbf{a}_i,\cdots,\mathbf{a}_n)
+\]
+Add column j to column i
+\[
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+=
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_j,\cdots,-\mathbf{a}_i,\cdots,\mathbf{a}_n)
+\]
+Multiply -1 to column j
+\[
+-\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_n)
+=
+\Delta (\mathbf{a}_1,\cdots,\mathbf{a}_j,\cdots,\mathbf{a}_i,\cdots,\mathbf{a}_n)
+\]
+
+\textbf{Exercise 4.}\\
+
+An available sequence: Each time picks the first element, swap it with the next element if this element's $\sigma(i)$ is bigger than $\sigma(j)$ of the next element.\\
+Repeat n-1 times.\\
+In this method, everytime we do a swap will erase a pair of inversion. So the exact exchangenumber will be $\tau(\sigma)$.\\
+
+\textbf{Exercise 5.}\\
+
+\textbf{5.1} Since $\sigma_1\sigma_2 \in Perm(n)$ and there're only two differences between $\sigma_1(i)$ and $\sigma_2(i)$.
+So there must exist $i_1,i_2$ that satisfy 
+\[
+\sigma_1(i_1)=\sigma_2(i_2) , \sigma_1(i_2)=\sigma_2(i_1)
+\]
+To create precisely 2 differences.\\
+
+\textbf{5.2} Assume $i_1<i_2$ and see the swap as a series of swaps on adjacent elements. Since every element is unique , doing the swap will create a -1 or 1 change on $\tau(\sigma)$.
+ Finishing the swap of $\sigma_1(i_1)$ and $\sigma_1(i_2)$ will need \[
+ (i_2-i_1-1)+(i_2-i_1)=2(i_2-i_1)-1
+ \]
+ and this will create an \textbf{odd} change on $\tau(\sigma)$. So $\tau(\sigma_1)$ and $\tau(\sigma_2)$ will have different parity.\\
+
+\textbf{Exercise 6.}\\
+
+\textbf{6.1} 
+An available solution: Rewrite $\sigma_1$ by the form of $\sigma_2(i)$.For example
+\[
+\sigma_1 = 13425 , \sigma_2=12345 \Rightarrow \sigma_1=\sigma_2(1)\sigma_2(3)\sigma_2(4)\sigma_2(3)\sigma_2(5)
+\]
+Similar to \textbf{Exercise 4.}. There always exists a sequence of swapping to change $\sigma_2(1)\sigma_2(3)\sigma_2(4)\sigma_2(3)\sigma_2(5)$ to $\sigma_2(1)\sigma_2(2)\sigma_2(3)\sigma_2(4)\sigma_2(5)$
+So the statement holds.\\ 
+
+\textbf{6.2}\\
+
+First rewrite the permutations the same way as \textbf{6.1}. 
+So we can see the sequence $\sigma_1$ to $\sigma_2$ as a permutation transforming to the basic permutation.\\
+In other words, the parity of $\sigma_1$ to $\sigma_2$ equals $\sigma'_1$ to $\sigma'_2$ which $\sigma'_2=1234\cdots n$.\\
+
+From \textbf{5.2} we know that any 2-element swap will change the parity of $\tau(\sigma)$. Assume $\alpha(\sigma)$ as the length of the sequence transforming arbitrary $\sigma$ into basic permutation $1234\cdots n$.
+ Now we prove that the parity of $\alpha(\sigma)$ is unique for every $\sigma$.\\
+
+Since the basic permutation has 0 inversions, regard it has a even $\tau(\sigma)$. So for any permutation $\sigma$, if it has an odd $\tau(\sigma)$, it will need odd number of swaps to transform into basic permutation. Same for the even ones.\\
+
+In this way we prove that the parity of sequence length $\sigma_1$ to $\sigma_2$ will not change.
+ And by the provement above, we can know that the parity of $\sigma_1$ to $\sigma_2$ equals the parity of first transforing $\sigma_1$ to the basic permutation (in the form of $\sigma'_1$ to $\sigma'_2$ ) 
+ then transforming $\sigma_2$ to the basic form.\\
+ So the parity of $\sigma_1$ to $\sigma_2$  = the parity of $\tau(\sigma_1)+\tau(\sigma_2)$.\\
+
+\textbf{Exercise 7.}
+    Assume adding the jth column onto the ith column.
+    \[
+    det(A')=\sum_{\sigma \in Perm(n)}^{} (-1)^{\tau(\sigma)} \mathbf{a}_{\tau(1)1}\cdots(\mathbf{a}_{\tau(i)i}+\mathbf{a}_{\tau(j)j}) \cdots \mathbf{a}_{\tau(j)j} \cdots \mathbf{a}_{\tau(n)n}
+    \]
+    \[
+    =\sum_{\sigma \in Perm(n)}^{} (-1)^{\tau(\sigma)} \mathbf{a}_{\tau(1)1}\cdots\mathbf{a}_{\tau(i)i}\cdots \mathbf{a}_{\tau(j)j} \cdots \mathbf{a}_{\tau(n)n}
+    \]
+    \[
+    +\sum_{\sigma \in Perm(n)}^{} (-1)^{\tau(\sigma)} \mathbf{a}_{\tau(1)1}\cdots\mathbf{a}_{\tau(j)j} \cdots \mathbf{a}_{\tau(j)j} \cdots \mathbf{a}_{\tau(n)n}
+    \]
+    From \textbf{Exercise 3.} we know that if A has two same columns det(A)=0. So \[
+    det(A')=\sum_{\sigma \in Perm(n)}^{} (-1)^{\tau(\sigma)} \mathbf{a}_{\tau(1)1}\cdots\mathbf{a}_{\tau(i)i}\cdots \mathbf{a}_{\tau(j)j} \cdots \mathbf{a}_{\tau(n)n} = det(A)
+    \]
+\end{document}

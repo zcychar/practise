@@ -6,6 +6,7 @@
 int main() {
   std::size_t evict_id = 114514;
   ReplacementManager replacer(3, 2, ReplacementPolicy::kLRU_K);
+
   replacer.Visit(1, evict_id);
   assert(evict_id == ReplacementManager::npos);
   replacer.Visit(2, evict_id);

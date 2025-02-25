@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\vspace*{-3.5cm}Homework for Linear Algebra \\December 24, 2024} 
+\author{Chengyu Zhang}
+\date{}
+
+\begin{document}
+
+\maketitle
+\textbf{Exercise 1.}\\
+  \[
+  A^+=[1]\begin{bmatrix}
+    \frac{1}{5},0
+  \end{bmatrix}\begin{bmatrix}
+    0.6& 0.8\\
+    -0.8&0.6
+  \end{bmatrix}=\begin{bmatrix}
+    \frac{3}{25}& \frac{4}{25}
+  \end{bmatrix}
+  \]
+  \[
+  A^+A=\begin{bmatrix}
+    1
+  \end{bmatrix}, AA^+=\begin{bmatrix}
+    \frac{9}{25} & \frac{12}{25}\\
+    \frac{12}{25} & \frac{16}{25}
+  \end{bmatrix}
+  \]
+  \[
+  \mathbf{x}^+_1=A^+\mathbf{b}_1=1,\mathbf{x}^+_2=A^+\mathbf{b}_2=0
+  \]
+\textbf{Exercise 2.}\\
+
+From the difinition of $\mathbf{u}$,we have $\mathbf{u}_i^T\mathbf{u}_j=1$ when i=j, and if $i\neq j$, it equals zero. So 
+\[
+A^+A=\sum_{i\in r} \frac{\mathbf{v}_i\mathbf{u}_i^T}{\sigma_i}*\sum_{i\in r} \sigma_i\mathbf{u}_i\mathbf{v}_i^T=\sum_{i \in r}\mathbf{v}_i\mathbf{v}_i^T
+\] 
+So does for $\mathbf{v}_i$, so\[
+(A^+A)^2=\sum_{i \in r}\mathbf{v}_i\mathbf{v}_i^T*\sum_{i \in r}\mathbf{v}_i\mathbf{v}_i^T=\sum_{i \in r}\mathbf{v}_i\mathbf{v}_i^T=A^+A
+\]
+For "projection", we have known that $\mathbf{v}_1\cdots \mathbf{v}_r$ consists a basis for $C(A^T)$, also we can see from the equation that each column vector of $A^TA$ is a linear combination of  $\mathbf{v}_1\cdots \mathbf{v}_r$.
+ We prove that $A^+A$ is exactly the projection matrix onto the vector space $C(A^T)$.
+That is to say, for any $\mathbf{b}$ its projection vector on $C(A^T)$ is $A^+A\mathbf{b}$.
+Proof: Also use the property of $\mathbf{v}_i$,
+\[
+A(\mathbf{b}-A^+A\mathbf{b})=\sum_{i\in r} \sigma_i\mathbf{u}_i\mathbf{v}_i^T\mathbf{b}-\sum_{i\in r} \sigma_i\mathbf{u}_i\mathbf{v}_i^T*\sum_{i \in r}\mathbf{v}_i\mathbf{v}_i^T\mathbf{b}=\sum_{i\in r} \sigma_i\mathbf{u}_i\mathbf{v}_i^T\mathbf{b}-\sum_{i\in r} \sigma_i\mathbf{u}_i\mathbf{v}_i^T\mathbf{b}=0
+\]
+That is to say, the error vector $\mathbf{b}-A^+A\mathbf{b}$ is perpendicular to all the column vectors of A, which is to say it's perpendicular to $C(A^T)$.
+
+\textbf{Exercise 3.}\\
+
+For the matrix $A=\begin{bmatrix}
+    \mathbf{v}_1&\cdots&\mathbf{v}_n
+\end{bmatrix}$, since each column vector of it is orthornormal,we have $A^{-1}=A^T$.
+So \[
+AA^T=\begin{bmatrix}
+    \mathbf{v}_1&\cdots&\mathbf{v}_n
+\end{bmatrix}\begin{bmatrix}
+    \mathbf{v}_1^T\\\vdots\\\mathbf{v}_n^T
+\end{bmatrix}=\mathbf{v}_1\mathbf{v}_1^T+\cdots+\mathbf{v}_n\mathbf{v}_n^T=AA^{-1}=I_n
+\]
+
+\textbf{Exercise 4.}\\
+
+\textbf{4.1}\\
+
+Since $A^+=V\Sigma^+U^T=\sum_{i\in r}\frac{\mathbf{v}_i\mathbf{u}_i^T}{\sigma_i}$, and from definition, each $\mathbf{v}_i$ is linearly independent to others. So we can see each column of $A^+$ as a linear combination of $\mathbf{v}_1\cdots\mathbf{v}_r$,which means $rank(A^+)=rank(A)=r$.\\
+
+\textbf{4.2}\\
+
+If A is invertible, that means in SVD, the matrix $\Sigma$ will have the whole n singular values. From the property of orthornormal matrix, we have
+\[
+A^+A=V\Sigma^+U^TU\Sigma V^T=V\Sigma^+\Sigma V^T=VIV^T=I
+\]
+Also $AA^+=I$, which means $A^+=A^{-1}$.\\
+
+\textbf{Exercise 5.}\\
+
+\textbf{5.1} Assume $\mathbf{x}=c_1\mathbf{v}_1+\cdots+c_n\mathbf{v}_n$, where $\mathbf{v}_1,\cdots, \mathbf{v}_n$ consists a orthonormal basis for $\mathbb{R}^n$, and the first r vector of it is exactly the column vectors in $V$ of A's SVD.
+ From what we known in class, it's possible to build a basis like this. So
+ \[
+ \frac{||A\mathbf{x}||}{||\mathbf{x}||}=\frac{||(\sum_{i \in r}\sigma_i\mathbf{u}_i\mathbf{v}_i^T)(\sum_{i\in n}c_i\mathbf{v}_i)||}{\sqrt{\sum_{i \in n}c_i^2}}=\frac{\sqrt{\sum_{i\in r}\sigma_i^2c_i^2}}{\sqrt{\sum_{i \in n}c_i^2}}
+ \]
+Also \[
+  \sum_{i\in r}\sigma_i^2c_i^2= \sum_{i \in r}\sigma_i^2c_i^2+\sum_{i=r+1}^{n}0*c_i^2\leq \sigma_1^2\sum_{i=1}^{n}c_i^2
+\]
+So \[
+\max \frac{||A\mathbf{x}||}{||\mathbf{x}||}=\sigma_1
+\]
+holds.\\
+
+\textbf{5.2} First we prove the fact that there exist a nonzero $\mathbf{x}\in V_{k+1}=span(\{\mathbf{v}_1\cdots\mathbf{v}_{k+1}\}) \cap R(B)$\\
+Proof: Since $dim(V_{k+1})=k+1>rank(B)$, there must exist a vector in $\mathbf{v}_1,\cdots, \mathbf{v}_{k+1}$ that in $V_{k+1}\setminus C(B^T)$, so the error vector of its projection (which is also in $V_{k+1}$ since it can be represented by the vectors consist the basis of $C(B^T)$ and the unique vector).
+ This vector sufficients $\mathbf{x}$ since it is perpendicular to all the row vectors of B.
+Now we have $\mathbf{x}=\sum_{i =1}^{k+1}c_i\mathbf{v}_i$, then we calculate the fraction.
+\[
+||(A-B)\mathbf{x}||=||A\mathbf{x}||=\sqrt{\sum_{i=1}^{k+1}c_i^2\sigma_i^2}\geq\sqrt{\sigma_{k+1}\sum_{i=1}^{k+1}c_i^2}
+\]
+So $\max \frac{||(A-B)\mathbf{x}||}{||\mathbf{x}||}\geq \sigma_{k+1}$.\\
+
+\textbf{5.3} the equality holds when $c_2=\cdots=c_n=0$ which means $\mathbf{x}$ is linearly dependent to $\mathbf{v}_1$.
+\end{document}
